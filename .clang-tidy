@@ -1,0 +1,35 @@
+# clang-tidy configuration for L2Book (C++23)
+# Curated for learning: high-signal checks that teach good habits,
+# with the noisiest/most-pedantic ones disabled.
+#
+# Check groups enabled:
+#   bugprone-*         real bug patterns (the most valuable group)
+#   clang-analyzer-*   deep static analysis (use-after-free, leaks, null derefs)
+#   cppcoreguidelines-* the C++ Core Guidelines (Stroustrup/Sutter best practices)
+#   modernize-*        push you toward modern C++11..23 idioms (great when rusty)
+#   performance-*      common performance pitfalls (needless copies, etc.)
+#   readability-*      clarity and consistency
+---
+Checks: >
+  bugprone-*,
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  performance-*,
+  readability-*,
+  -modernize-use-trailing-return-type,
+  -readability-identifier-length,
+  -readability-magic-numbers,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-avoid-do-while,
+  -cppcoreguidelines-avoid-non-const-global-variables,
+  -readability-braces-around-statements
+
+# Keep learning: warnings stay warnings, they don't fail the build.
+WarningsAsErrors: ''
+
+# Only lint YOUR code, not third-party headers (vcpkg lives in external/).
+HeaderFilterRegex: 'src/.*'
+
+# Reuse the .clang-format rules when clang-tidy proposes fixes.
+FormatStyle: file

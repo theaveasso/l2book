@@ -1,0 +1,16 @@
+{
+	"cmake.useCMakePresets": "always",
+	"cmake.configureOnOpen": true,
+	"editor.formatOnSave": true,
+	"[cpp]": {
+		"editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+	},
+	"[c]": {
+		"editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+	},
+	"clangd.arguments": [
+		"--compile-commands-dir=${workspaceFolder}/build/gcc-debug",
+		"--header-insertion=never",
+		"--clang-tidy"
+	]
+}

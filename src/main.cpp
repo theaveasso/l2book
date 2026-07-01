@@ -1,6 +1,7 @@
 #include <iostream>
 
-int main() {
+int main()
+{
 	std::cout << "Hello L2Book" << '\n';
 	return 0;
 }

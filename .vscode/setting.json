@@ -1,0 +1,5 @@
+{
+	"cmake.useCMakePresets": "always",
+	"cmake.configureOnOpen": true,
+	"C_Cpp.default.compileCommandsPath": "${workspaceFolder}/build/gcc-debug/compile_commands.json"
+}
